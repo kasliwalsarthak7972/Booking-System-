@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Home -->
+  <div id="home" class="container">
+    <h1> All In One Booking System </h1>
+    <button onclick="showSection('movieBooking')">🎬 Book Movie</button>
+    <button onclick="showSection('hotelBooking')">🏨 Book Hotel</button>
+    <button onclick="showSection('restaurantBooking')">🍴 Book Restaurant</button>
+  </div>
+
+  <!-- Movie Booking -->
+  <div id="movieBooking" class="container hidden">
+    <h2>🎬 Select Your Movie</h2>
+    <button onclick="selectMovie('Avengers', 200)">Avengers - ₹200</button>
+    <button onclick="selectMovie('Inception', 250)">Inception - ₹250</button>
+    <button onclick="selectMovie('Jawan', 300)">Jawan - ₹300</button>
+    <div id="seatSelection" class="hidden"></div>
+    <button onclick="goToPayment()" class="hidden" id="payBtnMovie">Proceed to Payment</button>
+    <br><button onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <!-- Hotel Booking -->
+  <div id="hotelBooking" class="container hidden">
+    <h2>🏨 Book Your Room</h2>
+    <form id="hotelForm" onsubmit="return bookHotel()">
+      <label>Check-in Date:</label>
+      <input type="date" id="checkin" required><br>
+      <label>Check-out Date:</label>
+      <input type="date" id="checkout" required><br>
+      <label>Room Type:</label>
+      <select id="roomType" required>
+        <option value="AC">AC Room - ₹1500</option>
+        <option value="Non-AC">Non-AC Room - ₹1000</option>
+      </select><br>
+      <button type="submit">Proceed to Payment</button>
+    </form>
+    <br><button onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <!-- Restaurant Booking -->
+  <div id="restaurantBooking" class="container hidden">
+    <h2>🍴 Order Food</h2>
+    <button onclick="selectDish('Paneer Butter Masala', 250)">Paneer Butter Masala - ₹250</button>
+    <button onclick="selectDish('Special Veg Thali', 300)">Special Veg Thali - ₹300</button>
+    <button onclick="selectDish('Veg Thali', 200)">Veg Thali - ₹200</button>
+    <br><button onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <!-- Payment Section -->
+  <div id="paymentSection" class="container hidden">
+    <h2>💳 Payment</h2>
+    <p id="paymentDetails"></p>
+    <button onclick="completePayment()">Pay Now</button>
+    <br><button onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <!-- Success Section -->
+  <div id="paymentSuccess" class="container hidden">
+    <h2>✅ Payment Successful</h2>
+    <p id="successMsg"></p>
+    <button onclick="goHome()">🏠 Back to Home</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
