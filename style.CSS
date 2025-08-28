@@ -1,0 +1,126 @@
+/* General Page Styling */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  text-align: center;
+  color: #333;
+}
+
+/* Hide/Show Sections */
+.hidden {
+  display: none;
+}
+
+/* Main Container */
+.container {
+  background: #fff;
+  margin: 30px auto;
+  padding: 30px;
+  width: 85%;
+  max-width: 700px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ee0979); /* Orange → Pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+  margin: 20px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #07bf;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 12px rgba(0, 123, 255, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #0099cc);
+  transform: scale(1.05);
+}
+
+/* Inputs & Selects */
+input, select {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 80%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+/* Theater Seats */
+.seat {
+  width: 35px;
+  height: 35px;
+  margin: 6px;
+  background: #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.seat:hover {
+  transform: scale(1.2);
+}
+
+.seat.selected {
+  background: #28a745;
+}
+
+.seat.booked {
+  background: #dc3545;
+  cursor: not-allowed;
+}
+
+/* Payment Success Box */
+#paymentSuccess {
+  background: #e6ffe6;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 128, 0, 0.3);
+  animation: popIn 0.6s ease-in-out;
+}
+
+#paymentSuccess h2 {
+  color: #28a745;
+  font-size: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
